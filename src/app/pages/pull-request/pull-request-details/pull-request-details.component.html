@@ -1,0 +1,63 @@
+<main role="main">
+  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+    <h1 class="h2">Dashboard</h1>
+    <div class="btn-toolbar mb-2 mb-md-0">
+      <div class="btn-group mr-2">
+        <button class="btn btn-sm btn-outline-secondary">Share</button>
+        <button class="btn btn-sm btn-outline-secondary">Export</button>
+      </div>
+      <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
+        <span data-feather="calendar"></span>
+        This week
+      </button>
+    </div>
+  </div>
+
+  <h2>Section title</h2>
+
+  <ngx-datatable class="bootstrap" [rows]="pullRequests" [scrollbarH]="true">
+    <ngx-datatable-column name="ID">
+    </ngx-datatable-column>
+    <ngx-datatable-column name="Pull Request ID" prop="externalId">
+    </ngx-datatable-column>
+    <ngx-datatable-column name="Jira Tickets">
+    </ngx-datatable-column>
+    <ngx-datatable-column name="Title">
+    </ngx-datatable-column>
+    <ngx-datatable-column name="Author">
+      <ng-template ngx-datatable-cell-template let-value="value">
+        {{ value.username }}
+      </ng-template>
+    </ngx-datatable-column>
+    <ngx-datatable-column name="Created Date">
+      <ng-template ngx-datatable-cell-template let-value="value">
+        {{ value }}
+      </ng-template>
+    </ngx-datatable-column>
+    <ngx-datatable-column name="Updated Date">
+      <ng-template ngx-datatable-cell-template let-value="value">
+        {{ value }}
+      </ng-template>
+    </ngx-datatable-column>
+    <ngx-datatable-column name="Reviewers">
+      <ng-template ngx-datatable-cell-template let-value="value">
+        <li *ngFor="let reviewer of value;"> 
+         {{ reviewer.username}}  
+        </li>  
+      </ng-template>
+    </ngx-datatable-column>
+    <ngx-datatable-column name="status">
+    </ngx-datatable-column>
+    <ngx-datatable-column name="No of Comments">
+    </ngx-datatable-column>
+    <ngx-datatable-column name="Version Control" prop="repositoryVersionControl">
+    </ngx-datatable-column>
+    <ngx-datatable-column name="Repository" prop="repositoryCode">
+    </ngx-datatable-column>
+    <ngx-datatable-column name="fromBranch">
+    </ngx-datatable-column>
+    <ngx-datatable-column name="toBranch">
+    </ngx-datatable-column>
+
+  </ngx-datatable>
+</main>

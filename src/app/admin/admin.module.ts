@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
 import { AdminComponent } from './layout/admin.component';
-import { AdminRoutingModule, declarations } from './admin-routing.module';
-import { SharedModule } from '../shared/shared.module';
+import { AdminRoutingModule, AdminDeclarations } from './admin-routing.module';
 import { AdminSideMenuComponent } from './layout/side-menu/side-menu.component';
 import { AdminHeaderComponent } from './layout/header/header.component';
 import { AdminFooterComponent } from './layout/footer/footer.component';
-import { LoginComponent } from '../pages/login/login.component';
-import { AddProductComponent } from '../pages/product/add-product/add-product.component';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -14,11 +13,12 @@ import { AddProductComponent } from '../pages/product/add-product/add-product.co
     AdminFooterComponent,
     AdminHeaderComponent,
     AdminSideMenuComponent,
-    ...declarations
+    ...AdminDeclarations
   ],
   imports: [
-    AdminRoutingModule
-  ]
+    AdminRoutingModule,
+    NgxDatatableModule
+  ], providers: [DatePipe]
 })
 export class AdminModule {
 }
