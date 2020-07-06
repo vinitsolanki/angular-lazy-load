@@ -1,3 +1,11 @@
+@import "../node_modules/ag-grid-community/src/styles/ag-grid.scss";
+@import "../node_modules/ag-grid-community/src/styles/ag-theme-alpine/sass/ag-theme-alpine-mixin.scss";
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+.ag-theme-alpine {
+    @include ag-theme-alpine();
+}
+
 body {
   font-size: .875rem;
 }
